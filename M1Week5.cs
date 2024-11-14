@@ -54,9 +54,7 @@ namespace Discussions
             var three = new StaticClass(); // nope
             var x = StaticClass.Id; // nope
             var y = StaticClass.InstanceCount;
-            y++;
-            var z = StaticClass.InstanceCount;
-            // z = 1;
+
 
         }
     }
@@ -99,7 +97,7 @@ namespace Discussions
         }
     }
 
-    public class week5
+    public class M1Week5
     {
         // Constructor v/s initialzer syntax
 
@@ -148,7 +146,8 @@ namespace Discussions
 
         // Classes can have one, or more of these types of relationships!
 
-        // Services are almost always part of acollabroation relationship, smae for Repositories - both can employ Inheritance 
+        // Services are almost always part of a collabroation relationship, same for Repositories
+        // - both can employ Inheritance 
         // Entities are Composition classes but often employ Inheritance too.
 
 
