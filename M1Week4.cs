@@ -15,10 +15,10 @@ namespace Discussions
      *  build stronger, better, more reliable, easier to maintain software than big sweeping changes made by wizards. 
      *  
      *  Or to put it another way, if you code isn't where you want it to be, make small changes to move it closer to what you want and 
-     *  then re-evaulate. You'll often find that after a few such changes, that the code is in a better place than what you envisioned
+     *  then re-evaluate. You'll often find that after a few such changes, that the code is in a better place than what you envisioned
      *  when starting those changes.
      *  
-     *  Small, incremental chagnes, by the way, is the most fundamental principle of Agile Software Development. 
+     *  Small, incremental changes, by the way, is the most fundamental principle of Agile Software Development. 
      **********************************************************************************************************************************/
 
     // switch/case statement - on more flow control option
@@ -50,13 +50,13 @@ namespace Discussions
             switch (stateAbbreviation)
             {
                 case "KY": 
-                case "ky": // fallthroug intentional
-                case "Ky": // fallthroug intentional
-                case "kY": // fallthroug intentional
-                case "WV": // fallthroug intentional
-                case "wv": // fallthroug intentional
-                case "Wv": // fallthroug intentional
-                case "wV": // fallthroug intentional
+                case "ky": // fall-through intentional
+                case "Ky": // fall-through intentional
+                case "kY": // fall-through intentional
+                case "WV": // fall-through intentional
+                case "wv": // fall-through intentional
+                case "Wv": // fall-through intentional
+                case "wV": // fall-through intentional
                     taxAmount = purchaseAmount * 0.06M;
                     break; // don't forget break;
                 case "IN":
@@ -88,7 +88,7 @@ namespace Discussions
             switch (stateAbbreviation.ToUpper())
             {
                 case "KY":
-                case "WV": // fallthrough intentional
+                case "WV": // fall-through intentional
                     return purchaseAmount * 0.06M; // break not needed because return
                 case "IN":
                     return purchaseAmount * 0.07M;
@@ -103,12 +103,12 @@ namespace Discussions
     // Understanding Object Oriented Programming is important - OOP is the basis of most modern programming
     // but don't worry if it's not all clicking just yet. It seems more complicated than it is.
 
-    // really OOP is all about grouping related code/variables (data) together in ways that premote code reuse
+    // really OOP is all about grouping related code/variables (data) together in ways that promote code reuse
 
     /****************** 
 
     We talked Object v/s Class last week. 
-    Class is the code that defines an object type's methods and properties - clases are templates.
+    Class is the code that defines an object type's methods and properties - classes are templates.
     Object is the actual thing created from the class template. 
 
     some types of classes:
@@ -122,11 +122,11 @@ namespace Discussions
 
         Service Class/Object 
             - a class that handles the business logic related to a group of Entities/Business objects
-            - typically only one instance (hence why class/object become interchangable)
+            - typically only one instance (hence why class/object become interchangeable)
 
         Repository Class/Object
             - a class that handles the backed details of storing Entities (typically in a database)
-            - generally single instance, though not necessairly
+            - generally single instance, though not necessarily
 
         Factory Class/Object
             - a class that is used to create and 'hydrate' and another class. (not so common anymore)
@@ -134,26 +134,26 @@ namespace Discussions
         POCO - Plain Old Common Object 
             - refers to a class that is mostly member variables (Entities are often POCOs)
             - usually very few or no methods
-            - may be used to group other classes together to make them eaiser to pass to other class methods
+            - may be used to group other classes together to make them easier to pass to other class methods
 
         Container Class 
-            - a class that contains a group of other classes - Collectctions (List, Dictionary, etc) are containers 
-            - can be quite complicated (eg have multiple lists, and a mix of other clasess)
+            - a class that contains a group of other classes - Collections (List, Dictionary, etc) are containers 
+            - can be quite complicated (e.g. have multiple lists, and a mix of other classes)
             - typically has no methods - just exists to group other classes together        
 
-    Any qustions here before we move on?
+    Any questions here before we move on?
 
     -------------
-    Seperation of Concers 
-        - fancy way of saying classes should only be responisbility for doing one thing
+    Separation of Concerns 
+        - fancy way of saying classes should only be responsibility for doing one thing
 
             - in PetShop segregating the user interface from the product logic is an example of this
-        - that thing can be high level and abastract in nature, and then rely on other classes to  handle the details
+        - that thing can be high level and abstract in nature, and then rely on other classes to  handle the details
             - for example, we could have a UserManagement Class that the depends on other classes to do the customer or employee specific (separate class for each)
     ---------
-    Abstraction - Idenitfying classes, and limiting them to appropriate details as defined by the requirements. (don't care about user's pets)
+    Abstraction - Identifying classes, and limiting them to appropriate details as defined by the requirements. (don't care about user's pets)
 
-    Encapsulation - hiding/containing data/implementatin within a class so external code doesn't need to worry about it. 
+    Encapsulation - hiding/containing data/implementation within a class so external code doesn't need to worry about it. 
         - think of it as wrapping the data and the methods that operate on it in a black box we call the class
 
 
@@ -166,8 +166,8 @@ namespace Discussions
    
     /// Use Auto implemented properties unless  you specifically need access to the backing field or want a custom setter or getter
     
-    /// Snippits are great - esp for remembering syntax -- but not necessary for you to understand
-    ///     ctor - create a constrctor
+    /// Snippets are great - esp for remembering syntax -- but not necessary for you to understand
+    ///     ctor - create a constructor
     ///     prop - create a property
     ///     -- can add your own - I have one for tests that includes // arrange // act // assert comments to remind me
     /// 
@@ -210,7 +210,7 @@ namespace Discussions
 
     // outlining is useful, but latest Visual Studio does it for you
 
-    //*next week* Constructor v/s initiazer syntax (see above)
+    //*next week* Constructor v/s initializer syntax (see above)
 
     /************************ 
      * Separating Responsibilities
@@ -218,14 +218,14 @@ namespace Discussions
      *      as things get more complex, separate 
      *      
      *      Terms
-     *          coupling - classes should not be tightly coupled, ie should not depend on each other 
-     *              - unless it is a relationship dependancy - eg. customer has an address
+     *          coupling - classes should not be tightly coupled,  should not depend on each other 
+     *              - unless it is a relationship dependency - customer has an address
      *              - 
      *          cohesion - group related things together, no need to track data in multiple classes, make an address class!
      *          
      *     YAGNI - You Aren't Going To Need It - 75-90% of all "we'll want that later" statements are false, even when made by the SMEs
      *     
-     *     Design patterns - common "best practice" patterns that are accepted ways of orgainzing code by responsiblity 
+     *     Design patterns - common "best practice" patterns that are accepted ways of organizing code by responsibility 
      *          - repository pattern (or repo)   
      ******************/
 

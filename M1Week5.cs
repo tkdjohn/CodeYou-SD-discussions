@@ -99,9 +99,9 @@ namespace Discussions
 
     public class M1Week5
     {
-        // Constructor v/s initialzer syntax
+        // Constructor v/s initializer syntax
 
-        // constructor msut have parameters, otherwise you  have to set
+        // constructor must have parameters, otherwise you  have to set
         // member AFTER constructor is called.
 
         void ExampleMethod()
@@ -141,12 +141,12 @@ namespace Discussions
         //   Collaboration - "uses a" 
         //   Composition - "Has a" - often properties of one object - have a 1:n relationship
         //     Aggregation - exists outside relationship (customer has an order)
-        //     Composition - reated objects are interdependant (order has a one or more order items)
+        //     Composition - related objects are interdependent (order has a one or more order items)
         //   Inheritance - "Is a" (our User/Customer/Employee example. A Customer is a User, an Employee is a User.)
 
         // Classes can have one, or more of these types of relationships!
 
-        // Services are almost always part of a collabroation relationship, same for Repositories
+        // Services are almost always part of a collaboration relationship, same for Repositories
         // - both can employ Inheritance 
         // Entities are Composition classes but often employ Inheritance too.
 
@@ -172,8 +172,8 @@ namespace Discussions
         }
 
         // video used example of HomeAddress and BusinessAddress 
-        //    she suggested a list of addresses would be better b/c than independant properties,
-        //    becaue the list allows for more than 2 addresses. BUT be careful! You may have to 
+        //    she suggested a list of addresses would be better b/c than independent properties,
+        //    because the list allows for more than 2 addresses. BUT be careful! You may have to 
         //    find a way to distinguish between the two addresses. (One way would be to define 
         //    an AddressType as a property of each address. FINALLY! I can show  you a good use
         //    for enumerated types!
@@ -208,16 +208,16 @@ namespace Discussions
         // you can also just keep the code that has the test data and modify it to hydrate your database
         // (once the db added)
 
-        //    THIS IS AN IMPORTANT TOOL - we relgularlly write code that we know we'll throw away so we
+        //    THIS IS AN IMPORTANT TOOL - we regularly write code that we know we'll throw away so we
         //    can code pieces without worrying much about other pieces. Don't worry about writing code 
         //    you know or think you might throw away. It is not a waste of time. At a minimum it you
-        //    have written out your current thinking on that part of the code. (I often do this jsut to 
+        //    have written out your current thinking on that part of the code. (I often do this just to 
         //    that part out of my head so I can focus on another part.)
 
-        //    Expanding I often "stub out" things like repostitories
+        //    Expanding I often "stub out" things like repositories
         //       Stub out - adding the methods/properties I need to use in other classes without actually 
-        //                  adding any real values or code. I jsut do this as I realize I need them.
-        //    Then if I need to do somethign like add fake data, I'll do it something like in the video. 
+        //                  adding any real values or code. I just do this as I realize I need them.
+        //    Then if I need to do something like add fake data, I'll do it something like in the video. 
 
         // One final word here. DO NOT try to make your code perfect as you first write it. You will 
         // get stuck on one part or another trying to 'do it right' get something written and then 
@@ -225,7 +225,7 @@ namespace Discussions
         // with pseudo code) - this goes hand and hand with YAGNI
 
         // ** Inheritance ** we've discussed this before - seems harder than it actually is. 
-        // love love love her statment about only using as much (or as little) inheritence as required 
+        // love love love her statement about only using as much (or as little) inheritance as required 
         // by the requirements.
         //     "Only implement an inheritance relationship if the specific class type adds unique code."
         // This is a great example of YAGNI!
@@ -239,7 +239,7 @@ namespace Discussions
         // you didn't really believe that did you?
 
         // but yeah, I am not going to spend time just restating these awesome videos on inheritance/reuse. But there is 
-        // alot of information here. I encourage you to rewatch all of these videos when you start your capstone
+        // a lot of information here. I encourage you to re-watch all of these videos when you start your capstone
 
 
 
@@ -249,11 +249,11 @@ namespace Discussions
 
         // *** REUSE THROUGH INHERITANCE *** 
         // I generally argue that the only valid reason for using inheritance is if it provides code reuse!
-        // Inheritance that doesn't provide reuse is just overcomplication.
+        // Inheritance that doesn't provide reuse is just over complication.
 
 
         // But... questions or things that didn't quite make sense?????
-        //    does inheritance makse sense?
+        //    does inheritance make sense?
         //    does polymorphism make sense? (same function - multiple (poly) shapes (morph) ) 
         //    does an Abstract class make sense?  (abstract class can only be used as a base class)
 
@@ -262,12 +262,12 @@ namespace Discussions
         // I do this all the time! (and often delete the unit test code when I'm done.)
 
         // the EntityBase abstract class she builds is a common pattern - and a perfect example of inheritance/reuse.
-        // as well as a great example of an abastract class.
+        // as well as a great example of an abstract class.
 
 
         // *** Building Reusable Components *** 
         // YAAASS! love the Acme.Common project
-        //     a perfect example of including a DLL (Dynamicly Linked LIBRARY) project.   
+        //     a perfect example of including a DLL (Dynamically Linked LIBRARY) project.   
         // and the StringHandler class. Perfect example of a utility class! 
         //     love how she showed it could (should) be a static class. This is generally 
         //     true of utility classes.
@@ -287,14 +287,14 @@ namespace Discussions
         // then it can be (and likely should be) an Interface instead.
         // This is the buttons/switches/plugs/etc on our eggshell
 
-        // can use Ctrl-.  to automagically generate an interfave.
+        // can use Ctrl-.  to automagically generate an interface.
 
-        // dependancy injection relies heavily on interfaces.
+        // dependency injection relies heavily on interfaces.
 
         // love "think of an interface as a contract"
 
         // The whole point is  you can use an Interface anywhere you would use a type,
-        // which allows you to use different types of objects interchangably, as long
+        // which allows you to use different types of objects interchangeably, as long
         // as they implement the same interface! All with the benefits of Strong typing.
 
 

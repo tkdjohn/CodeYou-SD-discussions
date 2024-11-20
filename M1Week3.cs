@@ -69,7 +69,7 @@ namespace Discussions
             string color = String.Empty;
             // boolean operators: !, == ( different from = ), > , <  ,>=, <= !=, 
             // joining booleans   && , ||  (different from & and | !!!)
-            // if, else if, and else dont get semicolons!
+            // if, else if, and else don't get semicolons!
 
             if (color == "Blue") ;
             ThisLineAlwaysExecutesEvenWhenColorIsGreen();
@@ -101,7 +101,7 @@ namespace Discussions
             ///Don't be tempted to use try/catch all over the place. 
             //Exceptions are only for exceptional errors that are beyond your code's control.
 
-            // instatiate an exception 
+            // instantiate an exception 
             if (thing == null)
             {
                 throw new ArgumentNullException(nameof(thing), "Thing cannot be null");
@@ -218,7 +218,7 @@ namespace Discussions
         */
 
 
-        // dummmy methods to git rid of req squigglies
+        // dummy methods to git rid of red squiggles
         // 
 
         public void Log(string message)
