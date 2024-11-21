@@ -7,9 +7,11 @@ using System.Diagnostics;
 
 namespace Discussions {
     // y'all will be glad to know I finally installed Visual Studio Spell Checker.
-    // eaxmple one
+    // example one
     // you can add words humungous - yes VSSpellChecker that is a real word 
     // Note how it DOESN'T FLAG VSSpellChecker nor VSSepllChceker 
+
+    // GOTO: ************
 
     public static class Class1 {
         // example of enum and ternary operator
@@ -243,15 +245,55 @@ namespace Discussions {
 
 
     // **** Extension Methods ****
-    // 3h!? really? OK only 1.5h but still.  UGH. 
-    // way too much depth here for you guys. 
-    // Cool to realize that most of the LINQ methods used in the method syntax are 
-    // extension methods.
+    // 3h!? really? OK only 1.5h but still.  UGH. sorry didn't finish these videos.
+    // Cool fact: most (all??) of the LINQ methods are extension methods.
 
     // must be static method in a static class
     // uses the 'this' keyword on the first parameter - which the class or type you are
     //   extending.
+    public static class BookTitleExtensions {
+        public readonly static string[] WordsNotToCapitalize = [
+            "a", "an", "the", "of", "from" ];
+        public static string ToTitleCase(this string title) {
+            var words = title.Split(['_', ' '], StringSplitOptions.RemoveEmptyEntries);
+           
+            var firstWord = words.First().CapitalizeFirstLetter();
+            words[0] = firstWord;
+           
+            words = words
+                .Where(word => !WordsNotToCapitalize.Contains(word))
+                .Select(word => word.CapitalizeFirstLetter())
+                .ToArray();
+            return string.Join(' ', [firstWord, words]);
+        }
 
+        public static string CapitalizeFirstLetter(this string wordToCapitalize) { 
+            return $"{char.ToUpper(wordToCapitalize[0])}{wordToCapitalize[1..].ToLower()}"; 
+        }
+    }
+
+
+    public class BookManager {
+        public static string myToTitleCase(this string title) {
+            var words = title.Split(['_', ' '], StringSplitOptions.RemoveEmptyEntries);
+
+            var firstWord = words.First().CapitalizeFirstLetter();
+            words[0] = firstWord;
+
+            words = words
+                .Where(word => !WordsNotToCapitalize.Contains(word))
+                .Select(word => word.CapitalizeFirstLetter())
+                .ToArray();
+            return string.Join(' ', [firstWord, words]);
+        }
+        public void GetNewBookFromUser() {
+            Console.WriteLine("Enter the book's Title");
+            var title = Console.ReadLine();
+            title = title.ToTitleCase();
+            title = myToTitleCase (title);
+        }
+
+    }
     // The examples loading appsettings.json files is a pretty common pattern using
     //   extension methods. 
 
@@ -291,4 +333,9 @@ namespace Discussions {
     //    during the holiday break
 
     // What is a GUID?  
+
+    // !!!!!! NO CLASS TGIVING WEEK! 
+    // !!!!! I have not made formal plans to hold "Office Hours" at Ten20 this coming Sunday or the Sunday
+    // after the holiday, but I'll be in town both days as far as I know so reach out if you want/need
+    // and I can most likely get there. 
 }
