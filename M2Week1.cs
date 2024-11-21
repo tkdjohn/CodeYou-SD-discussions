@@ -281,7 +281,14 @@ namespace Discussions {
     // UNDERSTANDABLE code. Code that is hard to read is likely hard to understand, but 
     // just because code is easy to read, doesn't mean it is easy to understand.
 
-    // QUICK example of using VS to do git things.
+
+    // **** housekeeping **** 
+    // !!!! QUICK example of using VS to do git things. include showing line by line diffs and staging
+    // v/s auto stage/commit AND stash
+    // !!!! Slowly working through PetShop. I have my cleaned up version of the first one up there.
+    //    each one will be in its own commit so you can see the evolution if you want.
+    //    Plan to get caught up on PetShop as well as get ahead these video discussions
+    //    during the holiday break
 
     // What is a GUID?  
 }
