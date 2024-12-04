@@ -274,6 +274,8 @@ namespace Discussions {
 
 
     public class BookManager {
+        public readonly static string[] WordsNotToCapitalize = [
+            "a", "an", "the", "of", "from" ];
         public static string myToTitleCase(this string title) {
             var words = title.Split(['_', ' '], StringSplitOptions.RemoveEmptyEntries);
 
