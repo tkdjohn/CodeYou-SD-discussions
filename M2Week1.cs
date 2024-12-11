@@ -37,6 +37,7 @@ namespace Discussions {
         }
 
         public static string ToColor(this Color color) {
+            Color myColor = Color.White;
             return color.ToString();
         }
     }
