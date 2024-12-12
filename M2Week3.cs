@@ -4,8 +4,6 @@ using System.Text.Json;
 namespace Discussions {
     internal class M2Week3 {
 
-        // we're going to run long this week - just no avoiding it. too much to cover.
-
         //                 Generics! 
 
         // Pretty good videos here. But as usual it covers more than you really need
