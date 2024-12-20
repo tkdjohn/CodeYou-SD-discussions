@@ -14,7 +14,7 @@ SELECT * FROM Student
 SELECT * FROM Assignment
 
 -- CAN and SHOULD include database name with table name - dbo means 'database owner'
--- can be things other than dbo, but no one ever changes it
+-- can be things other than dbo, but no one 
 SELECT * FROM Courses.dbo.Course
 
 
@@ -25,7 +25,7 @@ SELECT AssignmentName, DueDate FROM Assignment
 -- you can change the names of columns to be more human readable in the output 
 -- this is called Column Aliasing
 SELECT 
-    AssignmentName AS Assignment
+    AssignmentName --AS Assignment
     , DueDate AS 'Due Date'
     , SubmitDate As 'Submitted On'
 FROM Assignment
@@ -52,8 +52,8 @@ SELECT
     FROM Assignment 
     WHERE 
         SubmitDate > DueDate
-        AND Grade BETWEEN 60 AND 70
-        OR  CourseId != 3
+        AND (Grade BETWEEN 60 AND 70
+        OR  CourseId != 3)
 
 /* OOPS! AND has precedence over OR so we need to add parentheses to make this work properly.
 Note that between is inclusive. Both start and end are included. 
@@ -150,6 +150,7 @@ SELECT AssignmentName AS Assignment, DueDate AS 'Due On', SubmitDate As 'Submitt
   there are also UPDATE and DELETE 
   */
   SELECT * FROM Student
+  
   UPDATE Student 
   SET 
     FirstName = LastName
@@ -159,3 +160,6 @@ SELECT AssignmentName AS Assignment, DueDate AS 'Due On', SubmitDate As 'Submitt
 
   DELETE FROM Student 
   WHERE StudentId = 1
+
+
+  SELECT 
